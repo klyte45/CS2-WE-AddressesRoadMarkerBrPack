@@ -1,0 +1,92 @@
+<WELayout>
+  <self itemName="Scaler">
+    <transform alignment="Left" arrayAxisOrder="XYZ">
+      <offsetPosition x="0" y="0" z="0" />
+      <offsetRotation x="-0" y="0" z="0" />
+      <scale x="1" y="1" z="1" />
+      <mustDraw>1</mustDraw>
+      <instanceCount>-1</instanceCount>
+      <arrayInstances x="1" y="1" z="1" />
+      <arraySpacing x="0" y="0" z="0" />
+    </transform>
+    <matrixTransform>
+      <scale formulae="&amp;WE_ARMBRP.ARMBPLayoutsFn;GetOverallScale">
+        <defaultValue x="1" y="1" z="1" />
+      </scale>
+    </matrixTransform>
+  </self>
+  <children>
+    <self itemName="BG">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="0" y="0" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="1" y="1" z="1" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <imageMesh atlas="AddressesRoadMarkerBrPack:Signs">
+        <image formulae="&amp;WE_ARMBRP.ARMBPLayoutsFn;GetImageName">NEW TEXT</image>
+      </imageMesh>
+      <defaultStyle>
+        <color>000000FF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+    <children>
+      <self itemName="FG">
+        <transform alignment="Left" arrayAxisOrder="XYZ">
+          <offsetPosition x="0" y="0" z="0" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="1" y="1" z="0.003" />
+          <mustDraw>1</mustDraw>
+          <instanceCount>-1</instanceCount>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <imageMesh atlas="AddressesRoadMarkerBrPack:Signs">
+          <image formulae="&amp;WE_ARMBRP.ARMBPLayoutsFn;GetImageName">NEW TEXT</image>
+        </imageMesh>
+        <defaultStyle>
+          <color>FFFFFFFF</color>
+          <emissiveColor>FFFFFFFF</emissiveColor>
+          <metallic>0</metallic>
+          <smoothness>0</smoothness>
+          <emissiveIntensity>0</emissiveIntensity>
+          <emissiveExposureWeight>0</emissiveExposureWeight>
+          <coatStrength>0</coatStrength>
+          <colorMask1>FFFFFF</colorMask1>
+          <colorMask2>FFFFFF</colorMask2>
+          <colorMask3>FFFFFF</colorMask3>
+        </defaultStyle>
+      </self>
+      <children>
+        <self itemName="TextGenerator">
+          <transform alignment="Left" arrayAxisOrder="XYZ">
+            <offsetPosition x="0" y="0" z="0" />
+            <offsetRotation x="-0" y="0" z="0" />
+            <scale x="0.01" y="0.01" z="1" />
+            <mustDraw>1</mustDraw>
+            <instanceCount formulae="&amp;WE_ARMBRP.ARMBPLayoutsFn;GetSignSettings.TextCount">-1</instanceCount>
+            <arrayInstances x="5" y="1" z="1" />
+            <arraySpacing x="0" y="0" z="0" />
+          </transform>
+          <layoutMesh>
+            <layout>___SignTextContainer</layout>
+          </layoutMesh>
+        </self>
+      </children>
+    </children>
+  </children>
+  <metadata dll="AddressesCS2" refName="RoadMarker_ExtraFields"><![CDATA[{"size":{"localization":"K45::WE_ARMBRP.adrLabel[size]","parameter":0,"position":8,"size":2,"type":"sel","options":{"0":"K45::WE_ARMBRP.adrOptions[size.0]","1":"K45::WE_ARMBRP.adrOptions[size.1]","2":"K45::WE_ARMBRP.adrOptions[size.2]","3":"K45::WE_ARMBRP.adrOptions[size.3]"}},"sclass":{"localization":"K45::WE_ARMBRP.adrLabel[sclass]","parameter":0,"position":6,"size":2,"type":"sel","options":{"0":"K45::WE_ARMBRP.adrOptions[sclass.0]","1":"K45::WE_ARMBRP.adrOptions[sclass.1]","2":"K45::WE_ARMBRP.adrOptions[sclass.2]","3":"K45::WE_ARMBRP.adrOptions[sclass.3]"}},"sid1":{"localization":"K45::WE_ARMBRP.adrLabel[sid]","parameter":0,"position":0,"size":6,"type":"sel","options":{"1":"K45::WE_ARMBRP.adrOptions[sid1.1]","2":"K45::WE_ARMBRP.adrOptions[sid1.2]","3":"K45::WE_ARMBRP.adrOptions[sid1.3]","4":"K45::WE_ARMBRP.adrOptions[sid1.4]","5":"K45::WE_ARMBRP.adrOptions[sid1.5]","6":"K45::WE_ARMBRP.adrOptions[sid1.6]","7":"K45::WE_ARMBRP.adrOptions[sid1.7]","8":"K45::WE_ARMBRP.adrOptions[sid1.8]","9":"K45::WE_ARMBRP.adrOptions[sid1.9]","10":"K45::WE_ARMBRP.adrOptions[sid1.10]","11":"K45::WE_ARMBRP.adrOptions[sid1.11]","12":"K45::WE_ARMBRP.adrOptions[sid1.12]","13":"K45::WE_ARMBRP.adrOptions[sid1.13]","14":"K45::WE_ARMBRP.adrOptions[sid1.14]","15":"K45::WE_ARMBRP.adrOptions[sid1.15]","16":"K45::WE_ARMBRP.adrOptions[sid1.16]","17":"K45::WE_ARMBRP.adrOptions[sid1.17]","18":"K45::WE_ARMBRP.adrOptions[sid1.18]","19":"K45::WE_ARMBRP.adrOptions[sid1.19]","20":"K45::WE_ARMBRP.adrOptions[sid1.20]","21":"K45::WE_ARMBRP.adrOptions[sid1.21]","22":"K45::WE_ARMBRP.adrOptions[sid1.22]","23":"K45::WE_ARMBRP.adrOptions[sid1.23]","24":"K45::WE_ARMBRP.adrOptions[sid1.24]","25":"K45::WE_ARMBRP.adrOptions[sid1.25]","26":"K45::WE_ARMBRP.adrOptions[sid1.26]","27":"K45::WE_ARMBRP.adrOptions[sid1.27]","28":"K45::WE_ARMBRP.adrOptions[sid1.28]","29":"K45::WE_ARMBRP.adrOptions[sid1.29]","30":"K45::WE_ARMBRP.adrOptions[sid1.30]","31":"K45::WE_ARMBRP.adrOptions[sid1.31]","32":"K45::WE_ARMBRP.adrOptions[sid1.32]","33":"K45::WE_ARMBRP.adrOptions[sid1.33]","34":"K45::WE_ARMBRP.adrOptions[sid1.34]","35":"K45::WE_ARMBRP.adrOptions[sid1.35]","36":"K45::WE_ARMBRP.adrOptions[sid1.36]","37":"K45::WE_ARMBRP.adrOptions[sid1.37]","38":"K45::WE_ARMBRP.adrOptions[sid1.38]","39":"K45::WE_ARMBRP.adrOptions[sid1.39]","40":"K45::WE_ARMBRP.adrOptions[sid1.40]"},"condition":{"eq":["sclass",1]}},"sid1_4":{"localization":"K45::WE_ARMBRP.adrLabel[sid_subselect]","parameter":1,"position":0,"size":31,"type":"sel","options":{"0":"K45::WE_ARMBRP.adrOptions[sid1.4.0]","1":"K45::WE_ARMBRP.adrOptions[sid1.4.1]"},"condition":{"and":[{"eq":["sclass",1]},{"eq":["sid1",4]}]}},"sid1_5":{"localization":"K45::WE_ARMBRP.adrLabel[sid_subselect]","parameter":1,"position":0,"size":31,"type":"sel","options":{"0":"K45::WE_ARMBRP.adrOptions[sid1.5.0]","1":"K45::WE_ARMBRP.adrOptions[sid1.5.1]"},"condition":{"and":[{"eq":["sclass",1]},{"eq":["sid1",5]}]}},"sid1_6":{"localization":"K45::WE_ARMBRP.adrLabel[sid_subselect]","parameter":1,"position":0,"size":31,"type":"sel","options":{"0":"K45::WE_ARMBRP.adrOptions[sid1.6.0]","1":"K45::WE_ARMBRP.adrOptions[sid1.6.1]","2":"K45::WE_ARMBRP.adrOptions[sid1.6.2]"},"condition":{"and":[{"eq":["sclass",1]},{"eq":["sid1",6]}]}},"sid1_8":{"localization":"K45::WE_ARMBRP.adrLabel[sid_subselect]","parameter":1,"position":0,"size":31,"type":"sel","options":{"0":"K45::WE_ARMBRP.adrOptions[sid1.8.0]","1":"K45::WE_ARMBRP.adrOptions[sid1.8.1]"},"condition":{"and":[{"eq":["sclass",1]},{"eq":["sid1",8]}]}},"sid1_24":{"localization":"K45::WE_ARMBRP.adrLabel[sid_subselect]","parameter":1,"position":0,"size":31,"type":"sel","options":{"0":"K45::WE_ARMBRP.adrOptions[sid1.24.0]","1":"K45::WE_ARMBRP.adrOptions[sid1.24.1]","2":"K45::WE_ARMBRP.adrOptions[sid1.24.2]"},"condition":{"and":[{"eq":["sclass",1]},{"eq":["sid1",24]}]}},"sid1_25":{"localization":"K45::WE_ARMBRP.adrLabel[sid_subselect]","parameter":1,"position":0,"size":31,"type":"sel","options":{"0":"K45::WE_ARMBRP.adrOptions[sid1.25.0]","1":"K45::WE_ARMBRP.adrOptions[sid1.25.1]","2":"K45::WE_ARMBRP.adrOptions[sid1.25.2]","3":"K45::WE_ARMBRP.adrOptions[sid1.25.3]"},"condition":{"and":[{"eq":["sclass",1]},{"eq":["sid1",25]}]}},"sid1_35":{"localization":"K45::WE_ARMBRP.adrLabel[sid_subselect]","parameter":1,"position":0,"size":31,"type":"sel","options":{"0":"K45::WE_ARMBRP.adrOptions[sid1.35.0]","1":"K45::WE_ARMBRP.adrOptions[sid1.35.1]"},"condition":{"and":[{"eq":["sclass",1]},{"eq":["sid1",35]}]}},"sid1_36":{"localization":"K45::WE_ARMBRP.adrLabel[sid_subselect]","parameter":1,"position":0,"size":31,"type":"sel","options":{"0":"K45::WE_ARMBRP.adrOptions[sid1.36.0]","1":"K45::WE_ARMBRP.adrOptions[sid1.36.1]"},"condition":{"and":[{"eq":["sclass",1]},{"eq":["sid1",36]}]}},"sid0":{"localization":"K45::WE_ARMBRP.adrLabel[sid]","parameter":0,"position":0,"size":6,"type":"sel","options":{"1":"K45::WE_ARMBRP.adrOptions[sid0.1]","2":"K45::WE_ARMBRP.adrOptions[sid0.2]","3":"K45::WE_ARMBRP.adrOptions[sid0.3]","4":"K45::WE_ARMBRP.adrOptions[sid0.4]","5":"K45::WE_ARMBRP.adrOptions[sid0.5]","6":"K45::WE_ARMBRP.adrOptions[sid0.6]","7":"K45::WE_ARMBRP.adrOptions[sid0.7]","8":"K45::WE_ARMBRP.adrOptions[sid0.8]","9":"K45::WE_ARMBRP.adrOptions[sid0.9]","10":"K45::WE_ARMBRP.adrOptions[sid0.10]","11":"K45::WE_ARMBRP.adrOptions[sid0.11]","12":"K45::WE_ARMBRP.adrOptions[sid0.12]","13":"K45::WE_ARMBRP.adrOptions[sid0.13]","14":"K45::WE_ARMBRP.adrOptions[sid0.14]","15":"K45::WE_ARMBRP.adrOptions[sid0.15]","16":"K45::WE_ARMBRP.adrOptions[sid0.16]","17":"K45::WE_ARMBRP.adrOptions[sid0.17]","18":"K45::WE_ARMBRP.adrOptions[sid0.18]","19":"K45::WE_ARMBRP.adrOptions[sid0.19]","20":"K45::WE_ARMBRP.adrOptions[sid0.20]","21":"K45::WE_ARMBRP.adrOptions[sid0.21]","22":"K45::WE_ARMBRP.adrOptions[sid0.22]","23":"K45::WE_ARMBRP.adrOptions[sid0.23]","24":"K45::WE_ARMBRP.adrOptions[sid0.24]","25":"K45::WE_ARMBRP.adrOptions[sid0.25]","27":"K45::WE_ARMBRP.adrOptions[sid0.27]","28":"K45::WE_ARMBRP.adrOptions[sid0.28]","29":"K45::WE_ARMBRP.adrOptions[sid0.29]","30":"K45::WE_ARMBRP.adrOptions[sid0.30]","31":"K45::WE_ARMBRP.adrOptions[sid0.31]","32":"K45::WE_ARMBRP.adrOptions[sid0.32]","33":"K45::WE_ARMBRP.adrOptions[sid0.33]","34":"K45::WE_ARMBRP.adrOptions[sid0.34]","35":"K45::WE_ARMBRP.adrOptions[sid0.35]","36":"K45::WE_ARMBRP.adrOptions[sid0.36]","37":"K45::WE_ARMBRP.adrOptions[sid0.37]","38":"K45::WE_ARMBRP.adrOptions[sid0.38]","39":"K45::WE_ARMBRP.adrOptions[sid0.39]","40":"K45::WE_ARMBRP.adrOptions[sid0.40]","41":"K45::WE_ARMBRP.adrOptions[sid0.41]","42":"K45::WE_ARMBRP.adrOptions[sid0.42]","43":"K45::WE_ARMBRP.adrOptions[sid0.43]","44":"K45::WE_ARMBRP.adrOptions[sid0.44]","45":"K45::WE_ARMBRP.adrOptions[sid0.45]","46":"K45::WE_ARMBRP.adrOptions[sid0.46]","47":"K45::WE_ARMBRP.adrOptions[sid0.47]","48":"K45::WE_ARMBRP.adrOptions[sid0.48]"},"condition":{"eq":["sclass",0]}},"sid0_1":{"localization":"K45::WE_ARMBRP.adrLabel[sid_subselect]","parameter":1,"position":0,"size":31,"type":"sel","options":{"0":"K45::WE_ARMBRP.adrOptions[sid0.1.0]","1":"K45::WE_ARMBRP.adrOptions[sid0.1.1]"},"condition":{"and":[{"eq":["sclass",0]},{"eq":["sid0",1]}]}},"sid0_2":{"localization":"K45::WE_ARMBRP.adrLabel[sid_subselect]","parameter":1,"position":0,"size":31,"type":"sel","options":{"0":"K45::WE_ARMBRP.adrOptions[sid0.2.0]","1":"K45::WE_ARMBRP.adrOptions[sid0.2.1]"},"condition":{"and":[{"eq":["sclass",0]},{"eq":["sid0",2]}]}},"sid0_3":{"localization":"K45::WE_ARMBRP.adrLabel[sid_subselect]","parameter":1,"position":0,"size":31,"type":"sel","options":{"0":"K45::WE_ARMBRP.adrOptions[sid0.3.0]","1":"K45::WE_ARMBRP.adrOptions[sid0.3.1]"},"condition":{"and":[{"eq":["sclass",0]},{"eq":["sid0",3]}]}},"sid0_4":{"localization":"K45::WE_ARMBRP.adrLabel[sid_subselect]","parameter":1,"position":0,"size":31,"type":"sel","options":{"0":"K45::WE_ARMBRP.adrOptions[sid0.4.0]","1":"K45::WE_ARMBRP.adrOptions[sid0.4.1]"},"condition":{"and":[{"eq":["sclass",0]},{"eq":["sid0",4]}]}},"sid0_5":{"localization":"K45::WE_ARMBRP.adrLabel[sid_subselect]","parameter":1,"position":0,"size":31,"type":"sel","options":{"0":"K45::WE_ARMBRP.adrOptions[sid0.5.0]","1":"K45::WE_ARMBRP.adrOptions[sid0.5.1]"},"condition":{"and":[{"eq":["sclass",0]},{"eq":["sid0",5]}]}},"sid0_7":{"localization":"K45::WE_ARMBRP.adrLabel[sid_subselect]","parameter":1,"position":0,"size":31,"type":"sel","options":{"0":"K45::WE_ARMBRP.adrOptions[sid0.7.0]","1":"K45::WE_ARMBRP.adrOptions[sid0.7.1]"},"condition":{"and":[{"eq":["sclass",0]},{"eq":["sid0",7]}]}},"sid0_10":{"localization":"K45::WE_ARMBRP.adrLabel[sid_subselect]","parameter":1,"position":0,"size":31,"type":"sel","options":{"0":"K45::WE_ARMBRP.adrOptions[sid0.10.0]","1":"K45::WE_ARMBRP.adrOptions[sid0.10.1]"},"condition":{"and":[{"eq":["sclass",0]},{"eq":["sid0",10]}]}},"sid0_11":{"localization":"K45::WE_ARMBRP.adrLabel[sid_subselect]","parameter":1,"position":0,"size":31,"type":"sel","options":{"0":"K45::WE_ARMBRP.adrOptions[sid0.11.0]","1":"K45::WE_ARMBRP.adrOptions[sid0.11.1]"},"condition":{"and":[{"eq":["sclass",0]},{"eq":["sid0",11]}]}},"sid0_13":{"localization":"K45::WE_ARMBRP.adrLabel[sid_subselect]","parameter":1,"position":0,"size":31,"type":"sel","options":{"0":"K45::WE_ARMBRP.adrOptions[sid0.13.0]","1":"K45::WE_ARMBRP.adrOptions[sid0.13.1]"},"condition":{"and":[{"eq":["sclass",0]},{"eq":["sid0",13]}]}},"sid0_20":{"localization":"K45::WE_ARMBRP.adrLabel[sid_subselect]","parameter":1,"position":0,"size":31,"type":"sel","options":{"0":"K45::WE_ARMBRP.adrOptions[sid0.20.0]","1":"K45::WE_ARMBRP.adrOptions[sid0.20.1]"},"condition":{"and":[{"eq":["sclass",0]},{"eq":["sid0",20]}]}},"sid0_21":{"localization":"K45::WE_ARMBRP.adrLabel[sid_subselect]","parameter":1,"position":0,"size":31,"type":"sel","options":{"0":"K45::WE_ARMBRP.adrOptions[sid0.21.0]","1":"K45::WE_ARMBRP.adrOptions[sid0.21.1]","2":"K45::WE_ARMBRP.adrOptions[sid0.21.2]","3":"K45::WE_ARMBRP.adrOptions[sid0.21.3]","4":"K45::WE_ARMBRP.adrOptions[sid0.21.4]"},"condition":{"and":[{"eq":["sclass",0]},{"eq":["sid0",21]}]}},"sid0_30":{"localization":"K45::WE_ARMBRP.adrLabel[sid_subselect]","parameter":1,"position":0,"size":31,"type":"sel","options":{"0":"K45::WE_ARMBRP.adrOptions[sid0.30.0]","1":"K45::WE_ARMBRP.adrOptions[sid0.30.1]","2":"K45::WE_ARMBRP.adrOptions[sid0.30.2]"},"condition":{"and":[{"eq":["sclass",0]},{"eq":["sid0",30]}]}},"sid0_32":{"localization":"K45::WE_ARMBRP.adrLabel[sid_subselect]","parameter":1,"position":0,"size":31,"type":"sel","options":{"0":"K45::WE_ARMBRP.adrOptions[sid0.32.0]","1":"K45::WE_ARMBRP.adrOptions[sid0.32.1]"},"condition":{"and":[{"eq":["sclass",0]},{"eq":["sid0",32]}]}},"sid0_33":{"localization":"K45::WE_ARMBRP.adrLabel[sid_subselect]","parameter":1,"position":0,"size":31,"type":"sel","options":{"0":"K45::WE_ARMBRP.adrOptions[sid0.33.0]","1":"K45::WE_ARMBRP.adrOptions[sid0.33.1]"},"condition":{"and":[{"eq":["sclass",0]},{"eq":["sid0",33]}]}},"sid0_42":{"localization":"K45::WE_ARMBRP.adrLabel[sid_subselect]","parameter":1,"position":0,"size":31,"type":"sel","options":{"0":"K45::WE_ARMBRP.adrOptions[sid0.42.0]","1":"K45::WE_ARMBRP.adrOptions[sid0.42.1]","2":"K45::WE_ARMBRP.adrOptions[sid0.42.2]"},"condition":{"and":[{"eq":["sclass",0]},{"eq":["sid0",42]}]}},"sid2":{"localization":"K45::WE_ARMBRP.adrLabel[sid]","parameter":0,"position":0,"size":6,"type":"sel","options":{"1":"K45::WE_ARMBRP.adrOptions[sid2.1]","2":"K45::WE_ARMBRP.adrOptions[sid2.2]"},"condition":{"eq":["sclass",2]}},"sid3":{"localization":"K45::WE_ARMBRP.adrLabel[sid]","parameter":0,"position":0,"size":6,"type":"sel","options":{"1":"K45::WE_ARMBRP.adrOptions[sid3.1]","2":"K45::WE_ARMBRP.adrOptions[sid3.2]","3":"K45::WE_ARMBRP.adrOptions[sid3.3]","4":"K45::WE_ARMBRP.adrOptions[sid3.4]"},"condition":{"eq":["sclass",3]}},"sid1_15":{"localization":"K45::WE_ARMBRP.adrLabel[sid_value]","parameter":1,"position":0,"size":31,"type":"num","condition":{"and":[{"eq":["sclass",1]},{"eq":["sid1",15]}]}},"sid1_18":{"localization":"K45::WE_ARMBRP.adrLabel[sid_value]","parameter":1,"position":0,"size":31,"type":"num","condition":{"and":[{"eq":["sclass",1]},{"eq":["sid1",18]}]}},"sid1_14":{"localization":"K45::WE_ARMBRP.adrLabel[sid_value]","parameter":1,"position":0,"size":31,"type":"num","condition":{"and":[{"eq":["sclass",1]},{"eq":["sid1",14]}]}},"sid1_17":{"localization":"K45::WE_ARMBRP.adrLabel[sid_value]","parameter":1,"position":0,"size":31,"type":"num","condition":{"and":[{"eq":["sclass",1]},{"eq":["sid1",17]}]}},"sid1_16":{"localization":"K45::WE_ARMBRP.adrLabel[sid_value]","parameter":1,"position":0,"size":31,"type":"num","condition":{"and":[{"eq":["sclass",1]},{"eq":["sid1",16]}]}},"sid1_19":{"localization":"K45::WE_ARMBRP.adrLabel[sid_value]","parameter":1,"position":0,"size":31,"type":"num","condition":{"and":[{"eq":["sclass",1]},{"eq":["sid1",19]}]}},"sid0_37":{"localization":"K45::WE_ARMBRP.adrLabel[sid_value]","parameter":1,"position":0,"size":31,"type":"num","condition":{"and":[{"eq":["sclass",0]},{"eq":["sid0",37]}]}},"sid0_38":{"localization":"K45::WE_ARMBRP.adrLabel[sid_value]","parameter":1,"position":0,"size":31,"type":"num","condition":{"and":[{"eq":["sclass",0]},{"eq":["sid0",38]}]}},"sid0_46":{"localization":"K45::WE_ARMBRP.adrLabel[sid_value]","parameter":1,"position":0,"size":31,"type":"num","condition":{"and":[{"eq":["sclass",0]},{"eq":["sid0",46]}]}},"sid0_47":{"localization":"K45::WE_ARMBRP.adrLabel[sid_value]","parameter":1,"position":0,"size":31,"type":"num","condition":{"and":[{"eq":["sclass",0]},{"eq":["sid0",47]}]}},"sid0_48":{"localization":"K45::WE_ARMBRP.adrLabel[sid_value]","parameter":1,"position":0,"size":31,"type":"num","condition":{"and":[{"eq":["sclass",0]},{"eq":["sid0",48]}]}}}]]></metadata>
+  <metadata dll="AddressesCS2" refName="RoadMarker_OptionName"><![CDATA[K45::WE_ARMBRP.adrPackName[]]]></metadata>
+</WELayout>
