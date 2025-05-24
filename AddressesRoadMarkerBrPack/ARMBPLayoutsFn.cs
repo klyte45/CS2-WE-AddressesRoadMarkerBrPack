@@ -226,9 +226,12 @@ namespace WE_ARMBRP
         };
 
         private static string GetCurrentMileage(ADRData x, Entity e)
-            => BuildingUtils.GetAddress(World.DefaultGameObjectInjectionWorld.EntityManager, e, out _, out var num)
-                ? Math.Round(num / 1000f).ToString("#,##0", WELocalizationBridge.GetWeCultureInfo())
-                : "??";
+        {
+            var isImperialSystem = GameManager.instance.settings.userInterface.unitSystem == Game.Settings.InterfaceSettings.UnitSystem.Freedom;
+            return BuildingUtils.GetAddress(World.DefaultGameObjectInjectionWorld.EntityManager, e, out _, out var num)
+                        ? Math.Round(num / (isImperialSystem ? 1760f : 1000f)).ToString("#,##0", WELocalizationBridge.GetWeCultureInfo())
+                        : "??";
+        }
 
         public struct SignSettings
         {
