@@ -2,8 +2,10 @@
 using BridgeWE;
 using Game.Buildings;
 using Game.SceneFlow;
+using Game.UI;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Entities;
 using Unity.Mathematics;
 using Color = UnityEngine.Color;
@@ -78,7 +80,7 @@ namespace WE_ARMBRP
                 SignClass.R => scaleIdx switch
                 {
                     1 => new float3(.75f, .75f, 1),
-                    2 => new float3(.92f,.92f, 1),
+                    2 => new float3(.92f, .92f, 1),
                     3 => new float3(1.1f, 1.1f, 1),
                     _ => new float3(.55f, .55f, 1),
                 },
@@ -98,10 +100,10 @@ namespace WE_ARMBRP
                 },
                 SignClass.Vertical => scaleIdx switch
                 {
-                    1 => new float3(1f, 1f, 1),
-                    2 => new float3(1.25f, 1.25f, 1),
-                    3 => new float3(1.5f, 1.5f, 1),
-                    _ => new float3(.75f, .75f, 1),
+                    1 => new float3(1.5f, 1.5f, 1),
+                    2 => new float3(1.75f, 1.75f, 1),
+                    3 => new float3(2f, 2f, 1),
+                    _ => new float3(1.25f, 1.25f, 1),
                 },
                 _ => 0,
             };
@@ -113,6 +115,7 @@ namespace WE_ARMBRP
             var classDict = ImagesSettings[clazz];
             var data = classDict.TryGetValue(id, out var signSettings) ? signSettings : classDict[0];
             data.data = parameters;
+            data.entity = e;
             return data;
         }
 
@@ -174,28 +177,37 @@ namespace WE_ARMBRP
                 [16] = new SignSettings(new TextParams(new(0, .12f, 0), 0.2f, 2.5f, MetricSystemDependantFormat), new(new(0, -.12f, 0), 0.2f, 2.5f, GetLengthUnit)),
                 [17] = new SignSettings(new TextParams(new(0, .175f, 0), 0.18f, 3, WeightFormat)),
                 [18] = new SignSettings(new TextParams(new(0, -.175f, 0), 0.125f, 3, LengthFormat)),
-                [19] = new SignSettings(new TextParams(new(0, .075f, 0), 0.40f, 1.3f, IntegerFormat), new(new(0, -.25f,0), 0.1f, 3, GetVelocityUnit)),
+                [19] = new SignSettings(new TextParams(new(0, .075f, 0), 0.40f, 1.3f, IntegerFormat), new(new(0, -.25f, 0), 0.1f, 3, GetVelocityUnit)),
 
             },
             [SignClass.Horizontal] = new()
             {
                 [0] = new SignSettings(),
                 [1] = new SignSettings(
-                    new TextParams(default, default, default, (x, e) => GetHighwayNamingData(x, e).Prefix),
-                    new(default, default, default, (x, e) => GetHighwayNamingData(x, e).Suffix),
-                      new(default, default, default, (x, e) => GetHighwayNamingData(x, e).FullName, Color.white)
+                    new TextParams(new(0, .25f, 0), .1f, 1.6f, (x, e) => GetHighwayNamingData(x, e).Prefix),
+                    new(new(0, .04f, 0), .25f, 2.1f, (x, e) => GetHighwayNamingData(x, e).Suffix),
+                      new(new(0, -.25f, 0), .1f, 16, (x, e) => GetHighwayNamingData(x, e).FullName, Color.white)
                     ),
                 [2] = new SignSettings(
-                      new TextParams(default, default, default, (x, e) => GetHighwayNamingData(x, e).Prefix),
-                      new(default, default, default, (x, e) => GetHighwayNamingData(x, e).Suffix),
-                      new(default, default, default, (x, e) => GetHighwayNamingData(x, e).FullName, Color.white)
+                      new TextParams(new(0.49f, .2f, 0), .1f, 4, (x, e) => GetHighwayNamingData(x, e).Prefix),
+                      new(new(0.49f, -.04f, 0), .2f, 2.1f, (x, e) => GetHighwayNamingData(x, e).Suffix),
+                      new(new(-.28f, .16f, 0), .15f, 6.5f, (x, e) =>
+                      {
+                          var split = GetHighwayNamingData(x, e).FullName.Split(" ");
+                          return string.Join(" ", split.Take(split.Length / 2));
+                      }, Color.white),
+                      new(new(-.28f, -.08f, 0), .15f, 6.5f, (x, e) =>
+                      {
+                          var split = GetHighwayNamingData(x, e).FullName.Split(" ");
+                          return string.Join(" ", split.Skip(split.Length / 2));
+                      }, Color.white)
                       )
             },
             [SignClass.Vertical] = new()
             {
                 [0] = new SignSettings(),
                 [4] = new SignSettings(
-                    new TextParams(default, default, default, (x, e) =>
+                    new TextParams(new(0, .27f, 0), .08f, 4.25f, (x, e) =>
                 {
                     if (x.RouteDirection == 0)
                     {
@@ -204,19 +216,23 @@ namespace WE_ARMBRP
                     }
                     else
                     {
-                        return GameManager.instance.localizationManager.GetLocalizedName($"K45::ADR.vuio[RouteDirection.{(RouteDirection)x.RouteDirection}]").ToUpper();
+                        return NameSystem.Name.LocalizedName($"K45::ADR.vuio[RouteDirection.{(RouteDirection)x.RouteDirection}]").Translate().ToUpper();
                     }
                 }, Color.white),
-                    new(default, default, default, GetLengthGreaterUnit, Color.white),
-                    new(default, default, default, (x, e) => BuildingUtils.GetAddress(World.DefaultGameObjectInjectionWorld.EntityManager, e, out _, out var num) ? (num / 1000).ToString("#,##0") : "??", Color.white)),
+                    new(new(0, .04f, 0), .1f, 3.75f, GetLengthGreaterUnit, Color.white),
+                    new(new(0, -.16f, 0), .1f, 3.75f, GetCurrentMileage, Color.white)),
             }
 
         };
 
+        private static string GetCurrentMileage(ADRData x, Entity e)
+            => BuildingUtils.GetAddress(World.DefaultGameObjectInjectionWorld.EntityManager, e, out _, out var num)
+                ? Math.Round(num / 1000f).ToString("#,##0", WELocalizationBridge.GetWeCultureInfo())
+                : "??";
 
         public struct SignSettings
         {
-            public readonly int TextCount => texts.Length;
+            public readonly int TextCount => texts?.Length ?? 0;
 
             public TextParams[] texts = [];
             internal ADRData data = default;
