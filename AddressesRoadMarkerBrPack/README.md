@@ -8,7 +8,7 @@ This mod contains a more than 90 signs models based on Brazil Road Signs. It mig
 - Go to Write Everywhere button, at top left of the screen
 - Go to the Prefab Templates Setup
 - Find Addresses Mod entry on the list
-- Choose one of the custom slots (1 to 7) and select this mod on first dropdown, then "Base" on second dropdown
+- Choose one of the custom slots (1 to 7) and select this mod on first dropdown, then "Brazil" on second dropdown (or others in the future)
 
 After done that, it might be shown in the Addresses mod while placing or editing road markers, instead of the "Custom X" label on content dropdown.
 
@@ -37,7 +37,7 @@ Este mod contém mais de 90 modelos de placas baseadas nas placas de trânsito do 
 - Vá para o botão Write Everywhere, no canto superior esquerdo da tela
 - Vá para a Configuração de Modelos de Prefab
 - Encontre o item do Addresses Mod na lista
-- Escolha um dos slots personalizados (1 a 7) e selecione este mod no primeiro menu suspenso, depois "Base" no segundo menu suspenso
+- Escolha um dos slots personalizados (1 a 7) e selecione este mod no primeiro menu suspenso, depois "Brazil" no segundo menu suspenso (pode haver outros no futuro)
 
 Depois de fazer isso, ele deve ser exibido no mod Addresses ao colocar ou editar marcadores de estrada, em vez do rótulo "Personalizado X" no menu suspenso de conteúdo.
 

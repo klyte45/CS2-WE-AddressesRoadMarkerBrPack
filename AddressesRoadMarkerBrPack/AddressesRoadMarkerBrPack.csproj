@@ -16,15 +16,15 @@
     <LangVersion>12</LangVersion>
     <IsBelzontCommonsMod>false</IsBelzontCommonsMod>
     <ModId>112968</ModId>
-    <Version>1.0.0.0</Version>
+    <Version>1.0.0.1</Version>
     <GameVersion>1.*</GameVersion>
     <ThumbnailPath>Properties/Thumbnail.png</ThumbnailPath>
     <DisplayName>Addresses Mod Road Marker Brazil Pack</DisplayName>
     <ShortDescription>This module can be used as Custom layout replacement when using Addresses Mod and Write Everywhere together.</ShortDescription>
-    <ForumLink></ForumLink>
-    <GitHubLink></GitHubLink>
+    <ForumLink>https://forum.paradoxplaza.com/forum/threads/addresses-mod-road-marker-brazil-pack.1775412/</ForumLink>
+    <GitHubLink>https://github.com/klyte45/CS2-WE-AddressesRoadMarkerBrPack</GitHubLink>
     <YoutubeLink></YoutubeLink>
-    <KofiLink></KofiLink>
+    <KofiLink>https://ko-fi.com/klyte45</KofiLink>
     <BMACLink></BMACLink>
     <CrowdinLink></CrowdinLink>
     <TwitterLink></TwitterLink>
@@ -114,7 +114,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Resources\layouts\" />
     <Folder Include="Resources\atlases\" />
     <Folder Include="Resources\fonts\" />
   </ItemGroup>
